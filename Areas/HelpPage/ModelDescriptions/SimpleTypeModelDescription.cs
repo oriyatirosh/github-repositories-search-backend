@@ -1,0 +1,6 @@
+namespace GithubSearchApi.Areas.HelpPage.ModelDescriptions
+{
+    public class SimpleTypeModelDescription : ModelDescription
+    {
+    }
+}
