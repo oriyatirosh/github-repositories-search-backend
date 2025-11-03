@@ -11,7 +11,12 @@ namespace GithubSearchApi.Controllers
     [RoutePrefix("api/Email")]
     public class EmailController : ApiController
     {
-        private EmailService _emailService = new EmailService();
+        private readonly IEmailService _emailService;
+
+        public EmailController(IEmailService emailService)
+        {
+            _emailService = emailService;
+        }
 
         public class SendEmailRequest
         {

@@ -8,7 +8,7 @@ using System.Web;
 
 namespace GithubSearchApi.Services
 {
-    public class EmailService
+    public class EmailService: IEmailService
     {
         public void SendRepositoryEmail(string toEmail, RepositoryModel repo)
         {

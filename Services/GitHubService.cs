@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace GithubSearchApi.Services
 {
-    public class GitHubService
+    public class GitHubService: IGitHubService
     {
         private static readonly HttpClient _http = new HttpClient();
 
@@ -14,7 +14,7 @@ namespace GithubSearchApi.Services
         {
             var url = $"https://api.github.com/search/repositories?q={System.Net.WebUtility.UrlEncode(q)}";
             var request = new HttpRequestMessage(HttpMethod.Get, url);
-            request.Headers.Add("User-Agent", "MyAspNetApp"); // GitHub requires User-Agent
+            request.Headers.Add("User-Agent", "MyAspNetApp"); 
 
             var resp = await _http.SendAsync(request);
             resp.EnsureSuccessStatusCode();
